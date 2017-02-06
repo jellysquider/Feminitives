@@ -28,7 +28,7 @@ SECRET_KEY = '%j=s88-cba9k^0p2o5mdky+yj$2r2zf!9r!$82ckk54vj-ese-'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'fem-dict1.herokuapp.com',
+    'fem-dict.herokuapp.com',
 ]
 
 
