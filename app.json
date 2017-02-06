@@ -1,0 +1,8 @@
+{
+  "name": "Dictionary of Feminitives",
+  "description": "An online platform for discussing, sharing and developing feminitives in Ukrainian language.",
+  "image": "",
+  "repository": "https://github.com/jellysquider/Feminitives",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}
