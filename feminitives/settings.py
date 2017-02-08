@@ -140,8 +140,8 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 #use the psycopg2 package to connect to DATABASE_URL in the code
-urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
+urllib.parse.uses_netloc.append("postgres")
+url = urlparse.urllib.parse(os.environ["DATABASE_URL"])
 
 conn = psycopg2.connect(
     database=url.path[1:],
