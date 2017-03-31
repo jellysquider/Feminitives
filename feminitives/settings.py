@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import dj_database_url
-# import psycopg2
-# import urlparse
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -85,16 +83,24 @@ WSGI_APPLICATION = 'feminitives.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_0639161351e83ae',
-        'USER': 'lzeykg0fpaecj0bu',
-        'PASSWORD': 'os4ofmod3oszc7xh',
-        'HOST': 'y0nkiij6humroewt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
-        'PORT': '3306',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'heroku_0639161351e83ae',
+#         'USER': 'lzeykg0fpaecj0bu',
+#         'PASSWORD': 'os4ofmod3oszc7xh',
+#         'HOST': 'y0nkiij6humroewt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+#         'PORT': '3306',
+#     }
+# }
+
+DATABASES['default']['ENGINE'] = django.db.backends.mysql
+DATABASES['default']['NAME'] = heroku_0639161351e83ae
+DATABASES['default']['USER'] = lzeykg0fpaecj0bu
+DATABASES['default']['PASSWORD'] = os4ofmod3oszc7xh
+DATABASES['default']['HOST'] = y0nkiij6humroewt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
+DATABASES['default']['PORT'] = 3306
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
