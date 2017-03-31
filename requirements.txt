@@ -1,5 +1,4 @@
 Django==1.10.*
 dj-database-url==0.4.1
 gunicorn==19.6.0
-MySQL-python==5.7.11
 whitenoise==3.3.0
