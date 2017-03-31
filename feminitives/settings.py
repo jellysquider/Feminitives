@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'feminitives.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'heroku_0639161351e83ae',
         'USER': 'lzeykg0fpaecj0bu',
         'PASSWORD': 'os4ofmod3oszc7xh',
         'HOST': 'y0nkiij6humroewt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
