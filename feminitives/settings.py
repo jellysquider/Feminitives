@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,11 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic',
     'dict',
+    'words',
      # Disable Django's own staticfiles handling in favour of WhiteNoise, for
     # greater consistency between gunicorn and `./manage.py runserver`. See:
     # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
-    'whitenoise.runserver_nostatic',
+
 ]
 
 MIDDLEWARE = [
@@ -93,14 +94,12 @@ WSGI_APPLICATION = 'feminitives.wsgi.application'
 #         'PORT': '3306',
 #     }
 # }
-
-DATABASES['default']['ENGINE'] = django.db.backends.mysql
-DATABASES['default']['NAME'] = heroku_0639161351e83ae
-DATABASES['default']['USER'] = lzeykg0fpaecj0bu
-DATABASES['default']['PASSWORD'] = os4ofmod3oszc7xh
-DATABASES['default']['HOST'] = y0nkiij6humroewt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com
-DATABASES['default']['PORT'] = 3306
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -148,5 +147,3 @@ STATIC_URL = '/static/'
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-DATABASES['default'] =  dj_database_url.config()
