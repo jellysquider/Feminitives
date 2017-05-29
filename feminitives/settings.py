@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
+    # 'south',
+    'haystack',
+    'whoosh',
     'dict',
     'words',
      # Disable Django's own staticfiles handling in favour of WhiteNoise, for
@@ -65,7 +68,11 @@ ROOT_URLCONF = 'feminitives.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['feminitives/templates'],
+        'DIRS': [
+                'templates',
+                'words/templates',
+                'dict/templates',
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -94,6 +101,7 @@ WSGI_APPLICATION = 'feminitives.wsgi.application'
 #         'PORT': '3306',
 #     }
 # }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -132,6 +140,17 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Search settings
+WHOOSH_INDEX = os.path.join(PROJECT_ROOT, 'whoosh/')
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': WHOOSH_INDEX,
+    },
+}
+
 
 
 # Static files (CSS, JavaScript, Images)

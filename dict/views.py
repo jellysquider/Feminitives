@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import Context #pass context to the html and render itself
+from django.template.loader import get_template
 from .forms import ContactForm
 
 # Create your views here.
+
 def index(request):
     # title = "Welcome"
     # if request.user.is_authenticated():

@@ -1,0 +1,11 @@
+{% if words.count >0 %}
+
+{% for word in words %}
+    <li><a href="/words/get/{{ word.id }}/">{{ word.masculinitive1 }}</a></li>
+{% endfor %}
+
+{% else %}
+
+<li>None to show! :(</li>
+
+{% endif %}

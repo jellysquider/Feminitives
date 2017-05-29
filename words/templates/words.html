@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+<!-- {% load staticfiles %} -->
+
+{% block content %}
+    <!-- Catalog Section -->
+ <section id="title-bar">
+   <div class="container">
+       <div class="row">
+           <div class="col-md-12">
+               <h1>Каталог</h1>
+               </div>
+           </div>
+         </div>
+       </section>
+
+<h3>Не знайшли потрібного слова? <a href="/words/create">Запропонуйте його!</a></h3>
+
+
+<h3>Search</h3>
+{% csrf_token %}
+<input type="text" id="search" name="search"/>
+<ul id="search-results">
+
+</ul>
+
+{% for word in words %}
+       <section id="q-a">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-12">
+                     <h2><a href="/words/get/{{ word.id }}/"> {{word.masculinitive1}}</a></h2>
+                     <p> {{ word.feminitive1 }} є в каталозі </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+{% endfor %}
+
+{% endblock %}

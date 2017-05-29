@@ -13,14 +13,31 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
-from dict import views
+from dict import views as main
+from words import views
+from feminitives import views as logs
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
-    url(r'^index.html', views.index, name='index'),
-    url(r'^q-a.html', views.qa, name='q-a'),
+    url(r'^$', main.index, name='index'),
+    url(r'^index.html', main.index, name='index'),
+    url(r'^q-a.html', main.qa, name='q-a'),
+    url(r'^word_template/$', views.word_template),
+    url(r'^words/', include('words.urls')),
+    # url(r'^search/', include('haystack.urls')),
+
+    url(r'^accounts/login/$', logs.login),
+    url(r'^accounts/auth/$', logs.auth_view),
+    url(r'^accounts/logout/$', logs.logout),
+    url(r'^accounts/loggedin/$', logs.loggedin),
+    url(r'^accounts/invalid/$', logs.invalid_login),
 ]
+
+# if not settings.DEBUG:
+#     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+#
+#     urlpatterns += staticfiles_urlpatterns()
