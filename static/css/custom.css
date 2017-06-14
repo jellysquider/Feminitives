@@ -1,0 +1,94 @@
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,900);
+
+/*body {
+  margin-top: 500px;
+  font-family: Avenir Next;
+}*/
+
+.em-text {
+/* Словник фемінітивів: */
+  font-family: Avenir Next;
+  font-size: 24px;
+  weight: bold;
+  color: #564972 !important;
+  letter-spacing: 0px;
+}
+
+.nav-text {
+  color: #564972 !important;
+  font-size: 18px;
+  style: bold;
+}
+
+.word-name-section {
+    height: 25%;
+    margin-top: 20px;
+    padding: 70px 0 0 0;
+    text-align: center;
+    background: #fff;
+}
+
+.word-def-section {
+    height: 100%;
+    padding: 0 0 300px 0;
+    text-align: center;
+    background: #fff;
+}
+
+.comments-section {
+    min-height: 100%;
+    padding-top: 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.name li {
+    float: left;
+    padding: 0 3px 0;
+    list-style: none;
+    margin: auto;
+}
+
+.cases li {
+    /*float: left !important;*/
+    /*padding: 0 0 0 10px;*/
+    margin-top: 15px;
+    list-style: none;
+}
+
+#word-name .name h1 {
+  margin:auto;
+}
+
+.book {
+    padding: 0 0 0 85px;
+    margin: auto;
+}
+
+/*.defs h3 {
+  font-size: 30px !important;
+  /*padding-right: 50px;*/
+.usage, .defs {
+  margin-left: 200px;
+}
+
+.hr1 {
+  height: 4px;
+  color: #24193D;
+  border: 2px solid #24193D;
+  width: 35%;
+  text-align: center;
+  margin: 0 auto;;
+}
+
+.limit  {
+  width: 750px;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+h3 {
+  font-weight: normal !important;
+}
